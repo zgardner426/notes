@@ -104,4 +104,7 @@ print("{:05}".format(234))  # the number after the 0 spesifies the number of pla
 # 142.3 --- $142.3
 print("${:.2f}".format(142.3))
 
+# Github- Git is a VCS (Version Control System)
+# allows you to go back to past changes and revert to or see old code
+
 
