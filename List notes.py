@@ -138,18 +138,20 @@ print(third_list)
 
 # Do all four at once
 
-allfour_list = []
+four_list = []
 for i in range(100):
     num = i ** 2
     if num % 2 == 1:
         if num >= 100 and num <= 1000:
-            allfour_list.append(num)
+            four_list.append(num)
 
-print(allfour_list)
+print(four_list)
 
 print("\n")
+
+
 # list comprehension
-# [returned_item for iterator in range_or_list filter]
+# [returned_item for iterator in range_or_list filter condition(can be an if statement)]
 
 my_list = [x for x in range(100)] # the returned item is x, for ever iteration we are adding x into that list ever 100
 print(my_list)
@@ -162,3 +164,21 @@ print(my_list)
 
 my_list2 = [x for x in my_list if x >= 100 and x <= 1000]
 print(my_list2)
+
+# roll a single die 100 times and put it in a list
+import random
+my_rolls = [random.randrange(1, 7) for x in range(100)]
+print(my_rolls)
+
+# roll two dice in pairs 100 times and put in a list
+my_rolls2 = [[random.randrange(1, 7), random.randrange(1, 7)] for x in range(100)]
+print(my_rolls2)
+
+# create a list of only the doubles from my_rolls2
+my_rolls_doubles = [x for x in my_rolls2 if x[0] == x[1]]
+print(my_rolls_doubles)
+
+# can we generate a list and filter doubles on a single line
+my_super_list = [y for y in[[random.randrange(1, 7), random.randrange(1, 7)] for x in range(100)] if y[0] == y[1]]
+print(my_super_list)
+
