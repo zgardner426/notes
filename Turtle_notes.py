@@ -81,3 +81,7 @@ def recursive_ncaa(x, y, size, depth):
 
 recursive_ncaa(-300, 0, 300, 5)
 my_screen.exitonclick()
+
+
+# my_turtle.hidturtle() -- the oposit of show turtle
+# my_turtle.xcor() and .ycor() -- x, y positions
