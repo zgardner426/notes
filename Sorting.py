@@ -87,3 +87,25 @@ my_names = ["Abe", "Ded", "Eve", "Rob", "bob", "Zed", "Nan"]
 my_names.sort(reverse=True, key=str.upper)
 print(my_names)
 
+#extra sorting stuff
+my_list1 = [1, 2, 3, 4, 5]
+my_list2 = [[1,2], [1, 0], [8, 10]]
+
+my_list1.sort() #sorts in place
+my_list1 = sorted(my_list1) # equivelent function that returns
+
+# if you try and use the above functions on a list of lists, it sorts by the first part of each internal list
+my_list2.sort()
+
+
+# lambda function - anounymous single line function
+# lambda parameters: what to return
+
+double = lambda x: 2 * x
+print(double(10))
+
+products = lambda x, y: x * y
+print(products(9, 7))
+
+my_list2.sort(key=lambda x: x[1])
+print(my_list2)
