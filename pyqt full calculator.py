@@ -75,25 +75,25 @@ class Window(QWidget):
 
 
         #signals and slots
-        self.button1.clicked.connect(lambda: self.concat("1 "))
-        self.button2.clicked.connect(lambda: self.concat("2 "))
-        self.button_adition.clicked.connect(lambda: self.concat("+ "))
-        self.button0.clicked.connect(lambda: self.concat("0 "))
+        self.button1.clicked.connect(lambda: self.concat("1"))
+        self.button2.clicked.connect(lambda: self.concat("2"))
+        self.button_adition.clicked.connect(lambda: self.concat(" + "))
+        self.button0.clicked.connect(lambda: self.concat("0"))
         self.button_point.clicked.connect(lambda: self.concat("."))
-        self.button3.clicked.connect(lambda: self.concat("3 "))
-        self.button_minus.clicked.connect(lambda: self.concat("- "))
-        self.button6.clicked.connect(lambda: self.concat("6 "))
-        self.button5.clicked.connect(lambda: self.concat("5 "))
-        self.button4.clicked.connect(lambda: self.concat("4 "))
-        self.button_multiplication.clicked.connect(lambda: self.concat("* "))
-        self.button9.clicked.connect(lambda: self.concat("9 "))
-        self.button8.clicked.connect(lambda: self.concat("8 "))
-        self.button7.clicked.connect(lambda: self.concat("7 "))
-        self.button_division.clicked.connect(lambda: self.concat("/ "))
+        self.button3.clicked.connect(lambda: self.concat("3"))
+        self.button_minus.clicked.connect(lambda: self.concat(" - "))
+        self.button6.clicked.connect(lambda: self.concat("6"))
+        self.button5.clicked.connect(lambda: self.concat("5"))
+        self.button4.clicked.connect(lambda: self.concat("4"))
+        self.button_multiplication.clicked.connect(lambda: self.concat(" * "))
+        self.button9.clicked.connect(lambda: self.concat("9"))
+        self.button8.clicked.connect(lambda: self.concat("8"))
+        self.button7.clicked.connect(lambda: self.concat("7"))
+        self.button_division.clicked.connect(lambda: self.concat(" / "))
         self.button_equal.clicked.connect(self.equation_eval)
         self.button_equal.setObjectName("equal")
-        self.button_ac.clicked.connect(lambda: self.clear_answer)
-        self.button_percent.clicked.connect(lambda: self.percent)
+        self.button_ac.clicked.connect(self.all_clear)
+        self.button_percent.clicked.connect(self.percent)
 
 
         #style
@@ -110,14 +110,13 @@ class Window(QWidget):
     def equation_eval(self):
         self.answer.setText(str(eval(self.equation)))
 
-    def clear_answer(self):
-        self.equation = 0
+    def all_clear(self):
+        self.equation = " "
         self.answer.setText(self.equation)
 
     def percent(self):
         self.answer.setText(str(eval(self.equation) * .01))
     # i don't know why this won't work and have no idea where to start on the +/- thing
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
